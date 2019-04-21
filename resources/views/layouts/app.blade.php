@@ -21,10 +21,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <a class="navbar-brand" href="#">
-        <img class="navbar-brand-full" src="http://infyom.com/images/logo/blue_logo_150x150.jpg" width="30" height="30"
-             alt="Infyom Logo">
-        <img class="navbar-brand-minimized" src="http://infyom.com/images/logo/blue_logo_150x150.jpg" width="30"
-             height="30" alt="Infyom Logo">
+        Zeek
     </a>
     <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
         <span class="navbar-toggler-icon"></span>
@@ -80,8 +77,8 @@
 </div>
 <footer class="app-footer">
     <div>
-        <a href="https://infyom.com">Infyom </a>
-        <span>&copy; 2019 infyomLabs.</span>
+        <a href="https://www.fiverr.com/users/s0h41l/">Sohail Khan </a>
+        <span>&copy; 2019</span>
     </div>
     <div class="ml-auto">
         <span>Powered by</span>

@@ -1,11 +1,13 @@
 <table class="table table-responsive-sm table-striped" id="chipSets-table">
     <thead>
+        <th>Id</th>
         <th>Details</th>
         <th colspan="3">Action</th>
     </thead>
     <tbody>
     @foreach($chipSets as $chipSet)
         <tr>
+            <td>{!! $chipSet->id !!}</td>
             <td>{!! $chipSet->details !!}</td>
             <td>
                 {!! Form::open(['route' => ['chipSets.destroy', $chipSet->id], 'method' => 'delete']) !!}
@@ -18,5 +20,6 @@
             </td>
         </tr>
     @endforeach
+    {{ $chipSets->links() }}
     </tbody>
 </table>

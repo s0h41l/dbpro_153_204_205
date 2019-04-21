@@ -8,7 +8,7 @@ use App\Repositories\BaseRepository;
 /**
  * Class ChipSetRepository
  * @package App\Repositories
- * @version April 21, 2019, 7:26 am UTC
+ * @version April 21, 2019, 10:13 am UTC
 */
 
 class ChipSetRepository extends BaseRepository

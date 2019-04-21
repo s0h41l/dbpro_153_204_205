@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * Class ChipSet
  * @package App\Models
- * @version April 21, 2019, 7:26 am UTC
+ * @version April 21, 2019, 10:13 am UTC
  *
  * @property string details
  */

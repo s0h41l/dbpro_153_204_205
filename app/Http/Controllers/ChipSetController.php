@@ -29,7 +29,9 @@ class ChipSetController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $chipSets = $this->chipSetRepository->all();
+        $chipSets = $this->chipSetRepository->paginate(15);
+        //$users = DB::table('users')->paginate(15);
+
 
         return view('chip_sets.index')
             ->with('chipSets', $chipSets);
@@ -55,7 +57,6 @@ class ChipSetController extends AppBaseController
     public function store(CreateChipSetRequest $request)
     {
         $input = $request->all();
-
         $chipSet = $this->chipSetRepository->create($input);
 
         Flash::success('Chip Set saved successfully.');

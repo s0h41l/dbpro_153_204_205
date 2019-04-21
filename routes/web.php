@@ -93,3 +93,13 @@ Route::resource('screenSizes', 'ScreenSizeController');
 Route::resource('wlans', 'WlanController');
 
 Route::resource('bluetooths', 'BluetoothController');
+
+Route::resource('chipSets', 'ChipSetController');
+
+Route::resource('chipSets', 'ChipSetController');
+
+Route::resource('chipSets', 'ChipSetController');
+
+Route::resource('chipsets', 'ChipsetController');
+
+Route::resource('chipSets', 'ChipSetController');
