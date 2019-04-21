@@ -39,3 +39,53 @@ Route::resource('mainCameras', 'MainCameraController');
 Route::resource('oSS', 'OSController');
 
 Route::resource('uIS', 'UIController');
+
+Route::resource('weights', 'WeightController');
+
+Route::resource('sims', 'SimController');
+
+Route::resource('extraFeatures', 'ExtraFeatureController');
+
+Route::resource('mainMemories', 'MainMemoryController');
+
+Route::resource('dimensions', 'DimensionController');
+
+Route::resource('radios', 'RadioController');
+
+Route::resource('gPSS', 'GPSController');
+
+Route::resource('uSBS', 'USBController');
+
+Route::resource('data', 'DataController');
+
+Route::resource('infrareds', 'InfraredController');
+
+Route::resource('cameraFeatures', 'CameraFeatureController');
+
+Route::resource('frequencies', 'FrequencyController');
+
+Route::resource('secondaryCameras', 'SecondaryCameraController');
+
+Route::resource('featureSensors', 'FeatureSensorController');
+
+Route::resource('torches', 'TorchController');
+
+Route::resource('featureAudios', 'FeatureAudioController');
+
+Route::resource('cPUS', 'CPUController');
+
+Route::resource('builtInMemories', 'BuiltInMemoryController');
+
+Route::resource('brands', 'BrandController');
+
+Route::resource('batteries', 'BatterieController');
+
+Route::resource('displayTechnologies', 'DisplayTechnologieController');
+
+Route::resource('games', 'GameController');
+
+Route::resource('browsers', 'BrowserController');
+
+Route::resource('screenResolutions', 'ScreenResolutionController');
+
+Route::resource('screenSizes', 'ScreenSizeController');
