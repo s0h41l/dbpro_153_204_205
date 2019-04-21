@@ -89,3 +89,7 @@ Route::resource('browsers', 'BrowserController');
 Route::resource('screenResolutions', 'ScreenResolutionController');
 
 Route::resource('screenSizes', 'ScreenSizeController');
+
+Route::resource('wlans', 'WlanController');
+
+Route::resource('bluetooths', 'BluetoothController');
