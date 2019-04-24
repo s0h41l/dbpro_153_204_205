@@ -1,11 +1,11 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
-class CreateChipSetsTable extends Migration
+class CreateFourgTable extends Migration
 {
-
     /**
      * Run the migrations.
      *
@@ -13,10 +13,10 @@ class CreateChipSetsTable extends Migration
      */
     public function up()
     {
-        Schema::create('chip_sets', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('fourg', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('details');
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
@@ -27,6 +27,6 @@ class CreateChipSetsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('chip_sets');
+        Schema::dropIfExists('fourg');
     }
 }

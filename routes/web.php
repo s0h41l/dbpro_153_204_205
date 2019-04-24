@@ -103,3 +103,19 @@ Route::resource('chipSets', 'ChipSetController');
 Route::resource('chipsets', 'ChipsetController');
 
 Route::resource('chipSets', 'ChipSetController');
+
+Route::resource('roles', 'RoleController');
+
+Route::resource('users', 'UserController');
+
+Route::resource('devices', 'DeviceController');
+
+Route::resource('devices', 'DeviceController');
+
+Route::resource('devices', 'DeviceController');
+
+Route::resource('twoGs', 'TwoGController');
+
+Route::resource('threegs', 'ThreegController');
+
+Route::resource('fourGs', 'FourGController');

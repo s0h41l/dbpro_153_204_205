@@ -1,3 +1,6 @@
+<li class="nav-item {{ Request::is('devices*') ? 'active' : '' }}">
+    <a class="nav-link" href="{!! route('devices.index') !!}"><i class="nav-icon fa fa-tablet"></i><span>Devices</span></a>
+</li>
 <li class="nav-item {{ Request::is('chipSets*') ? 'active' : '' }}">
     <a class="nav-link" href="{!! route('chipSets.index') !!}"><i class="nav-icon fa fa-microchip"></i><span>ChipSets</span></a>
 </li>
@@ -103,4 +106,12 @@
 <li class="nav-item {{ Request::is('bluetooths*') ? 'active' : '' }}">
     <a class="nav-link" href="{!! route('bluetooths.index') !!}"><i class="nav-icon fa fa-bluetooth-b"></i><span>Bluetooths</span></a>
 </li>
-
+<li class="nav-item {{ Request::is('twoGs*') ? 'active' : '' }}">
+    <a class="nav-link" href="{!! route('twoGs.index') !!}"><i class="nav-icon icon-cursor"></i><span>2G Modules</span></a>
+</li>
+<li class="nav-item {{ Request::is('threegs*') ? 'active' : '' }}">
+    <a class="nav-link" href="{!! route('threegs.index') !!}"><i class="nav-icon icon-cursor"></i><span>3G 2G Modules</span></a>
+</li>
+<li class="nav-item {{ Request::is('fourGs*') ? 'active' : '' }}">
+    <a class="nav-link" href="{!! route('fourGs.index') !!}"><i class="nav-icon icon-cursor"></i><span>4G 2G Modules</span></a>
+</li>
