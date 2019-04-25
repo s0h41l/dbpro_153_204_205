@@ -115,3 +115,9 @@
 <li class="nav-item {{ Request::is('fourGs*') ? 'active' : '' }}">
     <a class="nav-link" href="{!! route('fourGs.index') !!}"><i class="nav-icon icon-cursor"></i><span>4G 2G Modules</span></a>
 </li>
+<li class="nav-item {{ Request::is('displayExtraFeatures*') ? 'active' : '' }}">
+    <a class="nav-link" href="{!! route('displayExtraFeatures.index') !!}"><i class="nav-icon icon-cursor"></i><span>DisplayExtraFeatures</span></a>
+</li>
+<li class="nav-item {{ Request::is('sDS*') ? 'active' : '' }}">
+    <a class="nav-link" href="{!! route('sDS.index') !!}"><i class="nav-icon icon-cursor"></i><span>SDS</span></a>
+</li>

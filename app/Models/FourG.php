@@ -15,7 +15,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class FourG extends Model
 {
-    use SoftDeletes;
+    //use SoftDeletes;
 
     public $table = 'fourg';
     

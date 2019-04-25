@@ -6,18 +6,18 @@ use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class Bluetooth
+ * Class SD
  * @package App\Models
- * @version April 21, 2019, 9:24 am UTC
+ * @version April 25, 2019, 5:32 pm UTC
  *
+ * @property \Illuminate\Database\Eloquent\Collection devices
  * @property string details
- * @property string version
  */
-class Bluetooth extends Model
+class SD extends Model
 {
     //use SoftDeletes;
 
-    public $table = 'connectivity_bluetooth';
+    public $table = 'sd_card';
     
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
@@ -27,8 +27,7 @@ class Bluetooth extends Model
 
 
     public $fillable = [
-        'details',
-        'version'
+        'details'
     ];
 
     /**
@@ -38,8 +37,7 @@ class Bluetooth extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'details' => 'string',
-        'version' => 'string'
+        'details' => 'string'
     ];
 
     /**
@@ -48,9 +46,14 @@ class Bluetooth extends Model
      * @var array
      */
     public static $rules = [
-        'details' => 'required',
-        'version' => 'required'
+        'details' => 'required'
     ];
 
-    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     **/
+    public function devices()
+    {
+        return $this->hasMany(\App\Models\Device::class);
+    }
 }

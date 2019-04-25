@@ -5,16 +5,18 @@
     <title>{{config('app.name')}}</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 4.1.1 -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.css">
+    <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{asset('css/date.css')}}">
     <!-- Theme style -->
-    <link rel="stylesheet" href="https://unpkg.com/@coreui/coreui/dist/css/coreui.min.css">
+    <link rel="stylesheet" href="{{asset('css/coreui.css')}}">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="https://unpkg.com/@coreui/icons/css/coreui-icons.min.css">
+    <link rel="stylesheet" href="{{asset('css/coreui-icon.css')}}">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.3.0/css/flag-icon.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.min.css">
+    <script src="{{asset('js/jquery.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.min.js"></script>
 
 </head>
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
@@ -89,160 +91,17 @@
 </footer>
 </body>
 <!-- jQuery 3.1.1 -->
-<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
 <script src="https://unpkg.com/@coreui/coreui/dist/js/coreui.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.min.js"></script>
+
 
 @yield('scripts')
 
 
-<script>
-    var os=[];
-    $.ajax({
-        url:'{{url('api/os')}}',
-        method:'get',
-        success:function (data) {
-            $.each(data,function (key,value) {
 
-                os.push({id:value.id,text:value.details});
-            })
-            $("#os_field").select2({
-                data:os
-            });
-        }
-    })
-
-
-    var ui=[];
-    $.ajax({
-        url:'{{url('api/ui')}}',
-        method:'get',
-        success:function (data) {
-            $.each(data,function (key,value) {
-
-                ui.push({id:value.id,text:value.details});
-            })
-            $("#ui_field").select2({
-                data:ui
-            });
-        }
-    })
-
-    var chipset=[];
-    $.ajax({
-        url:'{{url('api/chipset')}}',
-        method:'get',
-        success:function (data) {
-            $.each(data,function (key,value) {
-
-                chipset.push({id:value.id,text:value.details});
-            })
-            $("#chipset_field").select2({
-                data:chipset
-            });
-        }
-    })
-
-    var nfc=[];
-    $.ajax({
-        url:'{{url('api/nfc')}}',
-        method:'get',
-        success:function (data) {
-            $.each(data,function (key,value) {
-
-                nfc.push({id:value.id,text:value.details});
-            })
-            $("#nfc_field").select2({
-                data:nfc
-            });
-        }
-    })
-
-    var display_protection=[];
-    $.ajax({
-        url:'{{url('api/nfc')}}',
-        method:'get',
-        success:function (data) {
-            $.each(data,function (key,value) {
-
-                display_protection.push({id:value.id,text:value.details});
-            })
-            $("#display_protection_field").select2({
-                data:display_protection
-            });
-        }
-    })
-
-
-    var feature_message=[];
-    $.ajax({
-        url:'{{url('api/feature_message')}}',
-        method:'get',
-        success:function (data) {
-            $.each(data,function (key,value) {
-
-                display_protection.push({id:value.id,text:value.details});
-            })
-            $("#feature_message_field").select2({
-                data:feature_message
-            });
-        }
-    })
-
-    var main_camera=[];
-    $.ajax({
-        url:'{{url('api/main_camera')}}',
-        method:'get',
-        success:function (data) {
-            $.each(data,function (key,value) {
-
-                main_camera.push({id:value.id,text:value.details});
-            })
-            $("#main_camera_field").select2({
-                data:main_camera
-            });
-        }
-    })
-
-    var sims=[];
-    $.ajax({
-        url:'{{url('api/main_camera')}}',
-        method:'get',
-        success:function (data) {
-            $.each(data,function (key,value) {
-
-                sims.push({id:value.id,text:value.details});
-            })
-            $("#sim_field").select2({
-                data:sims
-            });
-        }
-    })
-
-
-    var secondary_camera=[];
-    $.ajax({
-        url:'{{url('api/secondary_camera')}}',
-        method:'get',
-        success:function (data) {
-            $.each(data,function (key,value) {
-                secondary_camera.push({id:value.id,text:value.details});
-            })
-            $("#camera_field").select2({
-                data:secondary_camera
-            });
-        }
-    })
-
-
-
-
-
-
-</script>
 
 </html>

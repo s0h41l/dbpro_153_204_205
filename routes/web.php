@@ -119,3 +119,7 @@ Route::resource('twoGs', 'TwoGController');
 Route::resource('threegs', 'ThreegController');
 
 Route::resource('fourGs', 'FourGController');
+
+Route::resource('displayExtraFeatures', 'DisplayExtraFeatureController');
+
+Route::resource('sDS', 'SDController');
