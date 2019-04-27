@@ -18,7 +18,7 @@
                                 <strong>Create Device</strong>
                             </div>
                             <div class="card-body">
-                                {!! Form::open(['route' => 'devices.store']) !!}
+                                {!! Form::open(['route' => 'devices.store','files'=>true]) !!}
 
                                    @include('devices.fields')
 
