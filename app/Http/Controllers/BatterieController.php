@@ -29,7 +29,7 @@ class BatterieController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $batteries = $this->batterieRepository->all();
+        $batteries = $this->batterieRepository->paginate(30);
 
         return view('batteries.index')
             ->with('batteries', $batteries);

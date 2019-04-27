@@ -20,5 +20,8 @@
             </td>
         </tr>
     @endforeach
+    {{ $batteries->links() }}
     </tbody>
+
+
 </table>

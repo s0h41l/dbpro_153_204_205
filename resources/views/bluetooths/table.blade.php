@@ -20,5 +20,6 @@
             </td>
         </tr>
     @endforeach
+    {{$bluetooths->links()}}
     </tbody>
 </table>

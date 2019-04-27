@@ -38,7 +38,7 @@
                                  CAMERA
                              </a>
                              <a href="#" class="btn btn-sq-lg btn-warning">
-                                 <i class="fa fa-feed fa-5x"></i><br/>
+                                 <i class="fa fa-rss fa-5x"></i><br/>
                                 NFC
                              </a>
                              <a href="#" class="btn btn-sq-lg btn-danger">
@@ -66,8 +66,8 @@
                                  CAMERA
                              </a>
                              <a href="#" class="btn btn-sq-lg btn-warning">
-                                 <i class="fa fa-databse fa-5x"></i><br/>
-                                 NFC
+                                 <i class="fa fa-database fa-5x"></i><br/>
+                                 Memory
                              </a>
                              <a href="#" class="btn btn-sq-lg btn-danger">
                                  <i class="fa fa-crop fa-5x"></i><br/>
@@ -174,21 +174,22 @@
                                  CPU
                              </a>
                              <a href="#" class="btn btn-sq-lg btn-info">
-                                 <i class="fa fa-user fa-5x"></i><br/>
-                                 CAMERA
+                                 <i class="fa fa-facebook fa-5x"></i><br/>
+                                 Applications
                              </a>
                              <a href="#" class="btn btn-sq-lg btn-warning">
-                                 <i class="fa fa-user fa-5x"></i><br/>
-                                 NFC
+                                 <i class="fa fa-check fa-5x"></i><br/>
+                                 Quality
                              </a>
                              <a href="#" class="btn btn-sq-lg btn-danger">
-                                 <i class="fa fa-user fa-5x"></i><br/>
+                                 <i class="fa fa-500px fa-5x"></i><br/>
+                                 Speed
 
                              </a>
 
                              <a href="#" class="btn btn-sq-lg btn-secondary">
-                                 <i class="fa fa-user fa-5x"></i><br/>
-
+                                 <i class="fa fa-cogs fa-5x"></i><br/>
+                                    Upgrade
                              </a>
 
                              <a href="#" class="btn btn-sq-lg btn-primary">
@@ -201,20 +202,9 @@
                                  CPU
                              </a>
                              <a href="#" class="btn btn-sq-lg btn-info">
-                                 <i class="fa fa-user fa-5x"></i><br/>
-                                 CAMERA
+                                 <i class="fa fa-stack-overflow fa-5x"></i><br/>
+                                 Recomandation
                              </a>
-                             <a href="#" class="btn btn-sq-lg btn-warning">
-                                 <i class="fa fa-user fa-5x"></i><br/>
-                                 NFC
-                             </a>
-                             <a href="#" class="btn btn-sq-lg btn-danger">
-                                 <i class="fa fa-user fa-5x"></i><br/>
-
-                             </a>
-
-                             <a href="#" class="btn btn-sq-lg btn-secondary">
-                                 <i class="fa fa-user fa-5x"></i><br/>
 
                              </a>
 

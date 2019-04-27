@@ -29,7 +29,7 @@ class BluetoothController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $bluetooths = $this->bluetoothRepository->all();
+        $bluetooths = $this->bluetoothRepository->paginate('30');
 
         return view('bluetooths.index')
             ->with('bluetooths', $bluetooths);

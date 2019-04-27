@@ -29,12 +29,10 @@ class ChipSetController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $chipSets = $this->chipSetRepository->paginate(15);
-        //$users = DB::table('users')->paginate(15);
+        $chipSets = $this->chipSetRepository->paginate(30);
 
 
-        return view('chip_sets.index')
-            ->with('chipSets', $chipSets);
+        return view('chip_sets.index')->with('chipSets', $chipSets);
     }
 
     /**
