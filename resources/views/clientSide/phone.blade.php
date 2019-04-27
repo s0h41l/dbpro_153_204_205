@@ -4,14 +4,14 @@
     <meta charset="utf-8">
     <title>Zeek</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="{{asset('img/apple-touch-icon.png')}}" rel="apple-touch-icon">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
-    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="{{asset('lib/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('lib/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
+    <link href="{{asset('lib/animate/animate.min.css')}}" rel="stylesheet">
+    <link href="{{asset('lib/ionicons/css/ionicons.min.css')}}" rel="stylesheet">
+    <link href="{{asset('lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/style.css')}}" rel="stylesheet">
     <script
             src="https://code.jquery.com/jquery-3.4.0.min.js"
             integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
@@ -68,7 +68,7 @@
                     html='<a href="/phone/%id%" class="card my-1"><div class="card-body my-1"><div class="row my-1"><div class="col-sm-2"><img src="%image%" width="100" class="img-fluid"></div><div class="col-sm-10"><p>%name%</p><p>%brand%</p></div></div></div></a>';
                     html=html.replace('%name%',value.description);
                     html=html.replace('%brand%',value.name);
-                    html=html.replace('%image%','images/'+value.cover_image);
+                    html=html.replace('%image%','{{asset('images')}}'+"/"+value.cover_image);
                     html=html.replace('%id%',value.id);
                     searchResult.insertAdjacentHTML('beforeend',html);
                 })
@@ -93,7 +93,8 @@
                 data-target="#navbarTogglerDemo01" aria-expanded="false">
             <span class="fa fa-search" aria-hidden="true"></span>
         </button>
-        <div class="navbar-collapse collapse justify-content-center" id="navbarDefault"><ul class="navbar-nav">
+        <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
+            <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link active" href="{{asset('/')}}">Home</a>
                 <li class="nav-item">
@@ -116,11 +117,10 @@
 </nav>
 <!--/ Nav End /-->
 
-<!--/ Carousel Star /-->
 <div class="intro intro-carousel">
     <div id="carousel" class="owl-carousel owl-theme">
 
-        <div class="carousel-item-a intro-item bg-image" style="background-image: url(img/slide-2.jpg)">
+        <div class="carousel-item-a intro-item bg-image" style="background-image: url({{asset('img/slide-2.jpg')}})">
             <div class="overlay overlay-a"></div>
             <div class="intro-content display-table">
                 <div class="table-cell">
@@ -141,7 +141,7 @@
                 </div>
             </div>
         </div>
-        <div class="carousel-item-a intro-item bg-image" style="background-image: url(img/slide-1.jpg)">
+        <div class="carousel-item-a intro-item bg-image" style="background-image: url({{asset('img/slide-1.jpg')}})">
             <div class="overlay overlay-a"></div>
             <div class="intro-content display-table">
                 <div class="table-cell">
@@ -163,7 +163,7 @@
             </div>
         </div>
 
-        <div class="carousel-item-a intro-item bg-image" style="background-image: url(img/slide-3.jpg)">
+        <div class="carousel-item-a intro-item bg-image" style="background-image: url({{asset('img/slide-3.jpg')}})">
             <div class="overlay overlay-a"></div>
             <div class="intro-content display-table">
                 <div class="table-cell">
@@ -186,303 +186,319 @@
         </div>
     </div>
 </div>
-<!--/ Carousel end /-->
 
-<!--/ Services Star /-->
-<section class="section-services section-t8">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="title-wrap d-flex justify-content-between">
-                    <div class="title-box">
-                        <h2 class="title-a">Our Services</h2>
-                    </div>
-                </div>
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-8 col-lg-10">
+            <div class="Heading1" style="text-align:left; width:604px; margin-top:12px">
+                <h2 class="display-4" >{{$device[0]->description}}</h2>
+
+                <table class="specs" class="table table-bordered" border="0" cellpadding="0" cellspacing="0">
+                    <tbody>
+
+
+                    <!--Main Category-->
+                    <tr class="RowBG2">
+                        <td rowspan="6" style="text-align: left;vertical-align: top;" class="hdngArial specs-mainHeading bottom-border-section text-info">Build</td>
+                        <th align="left" class="hdngArial specs-subHeading RowBG1 bottom-border">OS</th>
+                        <td colspan="2" class="fasla RowBG1 specs-value bottom-border">{{$device[0]->os}}&nbsp;</td>
+                    </tr>
+
+
+                    <tr class="RowBG1">
+                        <th align="left" class="hdngArial specs-subHeading RowBG1 bottom-border">UI</th>
+                        <td colspan="2" class="fasla specs-value bottom-border">{{$device[0]->ui}}&nbsp;</td>
+                    </tr>
+
+
+                    <tr class="RowBG1">
+                        <th align="left" class="hdngArial specs-subHeading RowBG1 bottom-border">Dimensions</th>
+                        <td colspan="2" class="fasla specs-value bottom-border">{{$device[0]->dimensions}}&nbsp;</td>
+                    </tr>
+
+
+                    <tr class="RowBG1">
+                        <th align="left" class="hdngArial specs-subHeading RowBG1 bottom-border">Weight</th>
+                        <td colspan="2" class="fasla specs-value bottom-border">{{$device[0]->weight}}&nbsp;</td>
+                    </tr>
+
+
+                    <tr class="RowBG1">
+                        <th align="left" class="hdngArial specs-subHeading RowBG1 bottom-border">SIM</th>
+                        <td colspan="2" class="fasla specs-value bottom-border">{{$device[0]->weight}}&nbsp;</td>
+                    </tr>
+
+
+                    <tr class="RowBG1">
+                        <th align="left" class="hdngArial specs-subHeading RowBG1 bottom-border-section">Colors</th>
+                        <td colspan="2" class="fasla specs-value bottom-border-section">{{$device[0]->color}}&nbsp;</td>
+                    </tr>
+
+                    <!--Main Category-->
+                    <tr class="RowBG2">
+                        <td rowspan="3" style="text-align: left;vertical-align: top;" class="hdngArial specs-mainHeading bottom-border-section text-info">Frequency</td>
+                        <th align="left" class="hdngArial specs-subHeading RowBG1 bottom-border">2G Band</th>
+                        <td colspan="2" class="fasla RowBG1 specs-value bottom-border">{{$device[0]->twog}}&nbsp;</td>
+                    </tr>
+
+
+                    <tr class="RowBG1">
+                        <th align="left" class="hdngArial specs-subHeading RowBG1 bottom-border">3G Band</th>
+                        <td colspan="2" class="fasla specs-value bottom-border">{{$device[0]->threeg}}&nbsp;</td>
+                    </tr>
+
+
+                    <tr class="RowBG1">
+                        <th align="left" class="hdngArial specs-subHeading RowBG1 bottom-border-section">4G Band</th>
+                        <td colspan="2" class="fasla specs-value bottom-border-section">{{$device[0]->forurg}}&nbsp;</td>
+                    </tr>
+
+                    <!--Main Category-->
+                    <tr class="RowBG2">
+                        <td rowspan="3" style="text-align: left;vertical-align: top;" class="hdngArial specs-mainHeading bottom-border-section text-info">Processor</td>
+                        <th align="left" class="hdngArial specs-subHeading RowBG1 bottom-border">CPU</th>
+                        <td colspan="2" class="fasla RowBG1 specs-value bottom-border">{{$device[0]->cpu}}&nbsp;</td>
+                    </tr>
+
+
+                    <tr class="RowBG1">
+                        <th align="left" class="hdngArial specs-subHeading RowBG1 bottom-border">Chipset</th>
+                        <td colspan="2" class="fasla specs-value bottom-border">{{$device[0]->chipset}}&nbsp;</td>
+                    </tr>
+
+
+                    <!--Main Category-->
+                    <tr class="RowBG2">
+                        <td rowspan="4" style="text-align: left;vertical-align: top;" class="hdngArial specs-mainHeading bottom-border-section">Display</td>
+                        <th align="left" class="hdngArial specs-subHeading RowBG1 bottom-border">Technology</th>
+                        <td colspan="2" class="fasla RowBG1 specs-value bottom-border">{{$device[0]->display_technology}}&nbsp;</td>
+                    </tr>
+
+
+                    <tr class="RowBG1">
+                        <th align="left" class="hdngArial specs-subHeading RowBG1 bottom-border text-info">Size</th>
+                        <td colspan="2" class="fasla specs-value bottom-border">{{$device[0]->screen_szie}}&nbsp;</td>
+                    </tr>
+
+
+                    <tr class="RowBG1">
+                        <th align="left" class="hdngArial specs-subHeading RowBG1 bottom-border text-info">Resolution</th>
+                        <td colspan="2" class="fasla specs-value bottom-border">QHD display&nbsp;</td>
+                    </tr>
+
+
+                    <tr class="RowBG1">
+                        <th align="left" class="hdngArial specs-subHeading RowBG1 bottom-border-section text-info">Extra Features</th>
+                        <td colspan="2" class="fasla specs-value bottom-border-section">
+                            {{$device[0]->extra_feature}}
+                            &nbsp;</td>
+                    </tr>
+
+                    <!--Main Category-->
+                    <tr class="RowBG2">
+                        <td rowspan="2" style="text-align: left;vertical-align: top;" class="hdngArial specs-mainHeading bottom-border-section text-info">Memory</td>
+                        <th align="left" class="hdngArial specs-subHeading RowBG1 bottom-border">Built-in</th>
+                        <td colspan="2" class="fasla RowBG1 specs-value bottom-border">{{$device[0]->built_in_memory}}&nbsp;</td>
+                    </tr>
+
+
+                    <tr class="RowBG1">
+                        <th align="left" class="hdngArial specs-subHeading RowBG1 bottom-border-section">Card</th>
+                        <td colspan="2" class="fasla specs-value bottom-border-section">{{$device[0]->sd_card}}&nbsp;</td>
+                    </tr>
+
+                    <!--Main Category-->
+                    <tr class="RowBG2">
+                        <td rowspan="3" style="text-align: left;vertical-align: top;" class="hdngArial specs-mainHeading bottom-border-section text-info">Camera</td>
+                        <th align="left" class="hdngArial specs-subHeading RowBG1 bottom-border">Main</th>
+                        <td colspan="2" class="fasla RowBG1 specs-value bottom-border"> {{$device[0]->main_camera}}&nbsp;</td>
+                    </tr>
+
+
+                    <tr class="RowBG1">
+                        <th align="left" class="hdngArial specs-subHeading RowBG1 bottom-border">Features</th>
+                        <td colspan="2" class="fasla specs-value bottom-border">auto focus face detecttion &nbsp;</td>
+                    </tr>
+
+
+                    <tr class="RowBG1">
+                        <th align="left" class="hdngArial specs-subHeading RowBG1 bottom-border-section">Front</th>
+                        <td colspan="2" class="fasla specs-value bottom-border-section">{{$device[0]->secondary_camera}}&nbsp;</td>
+                    </tr>
+
+                    <!--Main Category-->
+                    <tr class="RowBG2">
+                        <td rowspan="7" style="text-align: left;vertical-align: top;" class="hdngArial specs-mainHeading bottom-border-section text-info">Connectivity</td>
+                        <th align="left" class="hdngArial specs-subHeading RowBG1 bottom-border">WLAN</th>
+                        <td colspan="2" class="fasla RowBG1 specs-value bottom-border">{{$device[0]->wlan}}                                                  &nbsp;</td>
+                    </tr>
+
+
+                    <tr class="RowBG1">
+                        <th align="left" class="hdngArial specs-subHeading RowBG1 bottom-border">Bluetooth</th>
+                        <td colspan="2" class="fasla specs-value bottom-border">
+                            {{$device[0]->bluetooth}}                                &nbsp;</td>
+                    </tr>
+
+
+                    <tr class="RowBG1">
+                        <th align="left" class="hdngArial specs-subHeading RowBG1 bottom-border">GPS</th>
+                        <td colspan="2" class="fasla specs-value bottom-border">
+                            {{$device[0]->gps}}   &nbsp;</td>
+                    </tr>
+
+
+                    <tr class="RowBG1">
+                        <th align="left" class="hdngArial specs-subHeading RowBG1 bottom-border">Radio</th>
+                        <td colspan="2" class="fasla specs-value bottom-border">
+                            {{$device[0]->radio}}    &nbsp;</td>
+                    </tr>
+
+
+                    <tr class="RowBG1">
+                        <th align="left" class="hdngArial specs-subHeading RowBG1 bottom-border">USB</th>
+                        <td colspan="2" class="fasla specs-value bottom-border">
+                            {{$device[0]->usb}} &nbsp;</td>
+                    </tr>
+
+
+                    <tr class="RowBG1">
+                        <th align="left" class="hdngArial specs-subHeading RowBG1 bottom-border">NFC</th>
+                        <td colspan="2" class="fasla specs-value bottom-border">
+                            {{$device[0]->nfc}}&nbsp;</td>
+                    </tr>
+
+
+                    <tr class="RowBG1">
+                        <th align="left" class="hdngArial specs-subHeading RowBG1 bottom-border-section">Data</th>
+                        <td colspan="2" class="fasla specs-value bottom-border-section">
+                            <font color="#000077"><b>GPRS</b></font>,{{$device[0]->data}}&nbsp;</td>
+                    </tr>
+
+                    <!--Main Category-->
+                    <tr class="RowBG2">
+                        <td rowspan="7" style="text-align: left;vertical-align: top;" class="hdngArial specs-mainHeading bottom-border-section text-info">Features</td>
+                        <th align="left" class="hdngArial specs-subHeading RowBG1 bottom-border">Sensors</th>
+                        <td colspan="2" class="fasla RowBG1 specs-value bottom-border">{{$device[0]->sensor}}                                                &nbsp;</td>
+                    </tr>
+
+
+                    <tr class="RowBG1">
+                        <th align="left" class="hdngArial specs-subHeading RowBG1 bottom-border">Audio</th>
+                        <td colspan="2" class="fasla specs-value bottom-border">
+                            32-bit/384kHz audio, 3.5mm Audio Jack, MP3/eAAC+/WAV/Flac player, XviD/MP4/H.265 player, Speaker Phone                                                &nbsp;</td>
+                    </tr>
+
+
+                    <tr class="RowBG1">
+                        <th align="left" class="hdngArial specs-subHeading RowBG1 bottom-border">Browser</th>
+                        <td colspan="2" class="fasla specs-value bottom-border">{{$device[0]->browser}}&nbsp;</td>
+                    </tr>
+
+
+                    <tr class="RowBG1">
+                        <th align="left" class="hdngArial specs-subHeading RowBG1 bottom-border">Messaging</th>
+                        <td colspan="2" class="fasla specs-value bottom-border">
+                            {{$device[0]->message}}&nbsp;</td>
+                    </tr>
+
+
+                    <tr class="RowBG1">
+                        <th align="left" class="hdngArial specs-subHeading RowBG1 bottom-border">Games</th>
+                        <td colspan="2" class="fasla specs-value bottom-border">
+                            {{$device[0]->game}}&nbsp;</td>
+                    </tr>
+
+
+                    <tr class="RowBG1">
+                        <th align="left" class="hdngArial specs-subHeading RowBG1 bottom-border">Torch</th>
+                        <td colspan="2" class="fasla specs-value bottom-border">
+                            Yes                                                &nbsp;</td>
+                    </tr>
+
+
+                    <tr class="RowBG1">
+                        <th align="left" class="hdngArial specs-subHeading RowBG1 bottom-border-section">Extra</th>
+                        <td colspan="2" class="fasla specs-value bottom-border-section">
+                            {{$device[0]->extra_feature}} &nbsp;</td>
+                    </tr>
+
+                    <!--Main Category-->
+                    <tr class="RowBG2">
+                        <td rowspan="2" style="text-align: left;vertical-align: top;" class="hdngArial specs-mainHeading bottom-border-section text-info">Battery</td>
+                        <th align="left" class="hdngArial specs-subHeading RowBG1 bottom-border">Capacity</th>
+                        <td colspan="2" class="fasla RowBG1 specs-value bottom-border">{{$device[0]->battery_capacity}}&nbsp;</td>
+                    </tr>
+
+
+                    <tr class="RowBG1">
+                        <th align="left" class="hdngArial specs-subHeading RowBG1 bottom-border-section"></th>
+                        <td colspan="2" class="fasla specs-value bottom-border-section">
+                            {{$device[0]->battery_detail}}
+                            &nbsp;</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <table border="0" cellpadding="0" cellspacing="0" style="border-left: 1px solid #abc4e8; border-top:none;">
+                    <colgroup span="3"></colgroup>
+                    <tbody>
+                    <tr class="RowBG2">
+                        <th rowspan="1" align="left" class="hdngArial bottom-border-section specs-mainHeading text-info" style="width:101px"><h4 class="hdngArial" style="padding:0px; margin:0px; display:inline;">Price</h4></th>
+                        <td colspan="2" class="fasla RowBG1 bottom-border-section right-border specs-subHeading">{{$device[0]->price}}</strong>
+                            &nbsp;</td>
+                    </tr>
+                    <tr class="RowBG2">
+                        <th rowspan="1" align="left" class="hdngArial bottom-border-section specs-mainHeading" style="width:101px">Ratings </th>
+                        <td colspan="2" class="fasla RowBG1 bottom-border-section right-border specs-subHeading">Average Rating is <strong>4.5 stars</strong> - based on <strong>15</strong> user reviews.
+                            &nbsp;</td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
+
         </div>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card-box-c foo">
-                    <div class="card-header-c d-flex">
-                        <div class="card-box-ico">
-                            <span class="fa fa-gamepad"></span>
-                        </div>
-                        <div class="card-title-c align-self-center">
-                            <h2 class="title-c">Gaming Phones</h2>
-                        </div>
-                    </div>
-                    <div class="card-body-c">
-                        <p class="content-c">
-                            Sed porttitor lectus nibh. Cras ultricies ligula sed magna dictum porta. Praesent sapien massa,
-                            convallis a pellentesque
-                            nec, egestas non nisi.
-                        </p>
-                    </div>
-                    <div class="card-footer-c">
-                        <a href="#" class="link-c link-icon">Read more
-                            <span class="ion-ios-arrow-forward"></span>
-                        </a>
-                    </div>
-                </div>
+
+        <div class="col-sm-12 col-md-4 col-lg-2 mt-3">
+            <div class="div">
+                <img src="{{url('images/')}}/{{$device[0]->cover_image}}" class="img-fluid" alt="">
             </div>
-            <div class="col-md-4">
-                <div class="card-box-c foo">
-                    <div class="card-header-c d-flex">
-                        <div class="card-box-ico">
-                            <span class="fa fa-usd"></span>
-                        </div>
-                        <div class="card-title-c align-self-center">
-                            <h2 class="title-c">Affordable Prices</h2>
-                        </div>
-                    </div>
-                    <div class="card-body-c">
-                        <p class="content-c">
-                            Nulla porttitor accumsan tincidunt. Curabitur aliquet quam id dui posuere blandit. Mauris blandit
-                            aliquet elit, eget tincidunt
-                            nibh pulvinar a.
-                        </p>
-                    </div>
-                    <div class="card-footer-c">
-                        <a href="#" class="link-c link-icon">Read more
-                            <span class="ion-ios-arrow-forward"></span>
-                        </a>
-                    </div>
-                </div>
+            <br>
+            <div class="div">
+                <img src="{{url('images/')}}/{{$device[0]->image_1}}" class="img-fluid" alt="">
             </div>
-            <div class="col-md-4">
-                <div class="card-box-c foo">
-                    <div class="card-header-c d-flex">
-                        <div class="card-box-ico">
-                            <span class="fa fa-home"></span>
-                        </div>
-                        <div class="card-title-c align-self-center">
-                            <h2 class="title-c">Universal Access</h2>
-                        </div>
-                    </div>
-                    <div class="card-body-c">
-                        <p class="content-c">
-                            Sed porttitor lectus nibh. Cras ultricies ligula sed magna dictum porta. Praesent sapien massa,
-                            convallis a pellentesque
-                            nec, egestas non nisi.
-                        </p>
-                    </div>
-                    <div class="card-footer-c">
-                        <a href="#" class="link-c link-icon">Read more
-                            <span class="ion-ios-arrow-forward"></span>
-                        </a>
-                    </div>
-                </div>
+            <br>
+            <div class="div">
+                <img src="{{url('images/')}}/{{$device[0]->image_2}}" class="img-fluid" alt="">
             </div>
+            <br>
+            <div class="div">
+                <img src="{{url('images/')}}/{{$device[0]->image_3}}" class="img-fluid" alt="">
+            </div>
+            <br>
+            <div class="div">
+                <img src="{{url('images/')}}/{{$device[0]->image_4}}" class="img-fluid" alt="">
+            </div>
+            <br>
+            <div class="div">
+                <img src="{{url('images/')}}/{{$device[0]->image_5}}" class="img-fluid" alt="">
+            </div>
+            <br>
+            <div class="div">
+                <img src="{{url('images/')}}/{{$device[0]->image_6}}" class="img-fluid" alt="">
+            </div>
+
+
         </div>
     </div>
-</section>
-<!--/ Services End /-->
 
-<!--/ Property Star /-->
-<section class="section-property section-t8">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="title-wrap d-flex justify-content-between">
-                    <div class="title-box">
-                        <h2 class="title-a">Latest Phones</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="property-carousel" class="owl-carousel owl-theme">
-            <div class="carousel-item-b">
-                <div class="card-box-a card-shadow">
-                    <div class="img-box-a">
-                        <img src="img/phone1.jpg" alt="" class="img-a img-fluid">
-                    </div>
-                    <div class="card-overlay">
-                        <div class="card-overlay-a-content">
-                            <div class="card-header-a">
-                                <h2 class="card-title-a">
-                                    <a>206 Mount
-                                        <br /> Olive Road Two</a>
-                                </h2>
-                            </div>
-                            <div class="card-body-a">
-                                <div class="price-box d-flex">
-                                    <span class="price-a">rent | $ 12.000</span>
-                                </div>
-                                <a href="#" class="link-a">Click here to view
-                                    <span class="ion-ios-arrow-forward"></span>
-                                </a>
-                            </div>
-                            <div class="card-footer-a">
-                                <ul class="card-info d-flex justify-content-around">
-                                    <li>
-                                        <h4 class="card-info-title">Area</h4>
-                                        <span>340m
-                        <sup>2</sup>
-                      </span>
-                                    </li>
-                                    <li>
-                                        <h4 class="card-info-title">Beds</h4>
-                                        <span>2</span>
-                                    </li>
-                                    <li>
-                                        <h4 class="card-info-title">Baths</h4>
-                                        <span>4</span>
-                                    </li>
-                                    <li>
-                                        <h4 class="card-info-title">Garages</h4>
-                                        <span>1</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item-b">
-                <div class="card-box-a card-shadow">
-                    <div class="img-box-a">
-                        <img src="img/phone4.jpg" alt="" class="img-a img-fluid">
-                    </div>
-                    <div class="card-overlay">
-                        <div class="card-overlay-a-content">
-                            <div class="card-header-a">
-                                <h2 class="card-title-a">
-                                    <a>157 West
-                                        <br /> Central Park</a>
-                                </h2>
-                            </div>
-                            <div class="card-body-a">
-                                <div class="price-box d-flex">
-                                    <span class="price-a">rent | $ 12.000</span>
-                                </div>
-                                <a class="link-a">Click here to view
-                                    <span class="ion-ios-arrow-forward"></span>
-                                </a>
-                            </div>
-                            <div class="card-footer-a">
-                                <ul class="card-info d-flex justify-content-around">
-                                    <li>
-                                        <h4 class="card-info-title">Area</h4>
-                                        <span>340m
-                        <sup>2</sup>
-                      </span>
-                                    </li>
-                                    <li>
-                                        <h4 class="card-info-title">Beds</h4>
-                                        <span>2</span>
-                                    </li>
-                                    <li>
-                                        <h4 class="card-info-title">Baths</h4>
-                                        <span>4</span>
-                                    </li>
-                                    <li>
-                                        <h4 class="card-info-title">Garages</h4>
-                                        <span>1</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item-b">
-                <div class="card-box-a card-shadow">
-                    <div class="img-box-a">
-                        <img src="img/phone3.jpg" alt="" class="img-a img-fluid">
-                    </div>
-                    <div class="card-overlay">
-                        <div class="card-overlay-a-content">
-                            <div class="card-header-a">
-                                <h2 class="card-title-a">
-                                    <a href="property-single.html">245 Azabu
-                                        <br /> Nishi Park let</a>
-                                </h2>
-                            </div>
-                            <div class="card-body-a">
-                                <div class="price-box d-flex">
-                                    <span class="price-a">rent | $ 12.000</span>
-                                </div>
-                                <a href="property-single.html" class="link-a">Click here to view
-                                    <span class="ion-ios-arrow-forward"></span>
-                                </a>
-                            </div>
-                            <div class="card-footer-a">
-                                <ul class="card-info d-flex justify-content-around">
-                                    <li>
-                                        <h4 class="card-info-title">Area</h4>
-                                        <span>340m
-                        <sup>2</sup>
-                      </span>
-                                    </li>
-                                    <li>
-                                        <h4 class="card-info-title">Beds</h4>
-                                        <span>2</span>
-                                    </li>
-                                    <li>
-                                        <h4 class="card-info-title">Baths</h4>
-                                        <span>4</span>
-                                    </li>
-                                    <li>
-                                        <h4 class="card-info-title">Garages</h4>
-                                        <span>1</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item-b">
-                <div class="card-box-a card-shadow">
-                    <div class="img-box-a">
-                        <img src="img/phone3.jpg" alt="" class="img-a img-fluid">
-                    </div>
-                    <div class="card-overlay">
-                        <div class="card-overlay-a-content">
-                            <div class="card-header-a">
-                                <h2 class="card-title-a">
-                                    <a>204 Montal
-                                        <br /> South Bela Two</a>
-                                </h2>
-                            </div>
-                            <div class="card-body-a">
-                                <div class="price-box d-flex">
-                                    <span class="price-a">rent | $ 12.000</span>
-                                </div>
-                                <a href="property-single.html" class="link-a">Click here to view
-                                    <span class="ion-ios-arrow-forward"></span>
-                                </a>
-                            </div>
-                            <div class="card-footer-a">
-                                <ul class="card-info d-flex justify-content-around">
-                                    <li>
-                                        <h4 class="card-info-title">Area</h4>
-                                        <span>340m
-                        <sup>2</sup>
-                      </span>
-                                    </li>
-                                    <li>
-                                        <h4 class="card-info-title">Beds</h4>
-                                        <span>2</span>
-                                    </li>
-                                    <li>
-                                        <h4 class="card-info-title">Baths</h4>
-                                        <span>4</span>
-                                    </li>
-                                    <li>
-                                        <h4 class="card-info-title">Garages</h4>
-                                        <span>1</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--/ Property End /-->
+</div>
+
+
 
 <!--/ Agents Star /-->
 <section class="section-agents section-t8">
@@ -505,7 +521,7 @@
             <div class="col-md-4">
                 <div class="card-box-d">
                     <div class="card-img-d">
-                        <img src="img/sohail.jpg" alt="" class="img-d img-fluid">
+                        <img src="{{asset('img/sohail.jpg')}}" alt="" class="img-d img-fluid">
                     </div>
                     <div class="card-overlay card-overlay-hover">
                         <div class="card-header-d">
@@ -564,7 +580,7 @@
             <div class="col-md-4">
                 <div class="card-box-d">
                     <div class="card-img-d">
-                        <img src="img/bilal.jpg" alt="" class="img-d img-fluid">
+                        <img src="{{asset('img/bilal.jpg')}}" alt="" class="img-d img-fluid">
                     </div>
                     <div class="card-overlay card-overlay-hover">
                         <div class="card-header-d">
@@ -623,7 +639,7 @@
             <div class="col-md-4">
                 <div class="card-box-d">
                     <div class="card-img-d">
-                        <img src="img/sana.jpg" alt="" class="img-d img-fluid">
+                        <img src="{{asset('img/sana.jpg')}}" alt="" class="img-d img-fluid">
                     </div>
                     <div class="card-overlay card-overlay-hover">
                         <div class="card-header-d">
@@ -850,18 +866,18 @@
 <div id="preloader"></div>
 
 <!-- JavaScript Libraries -->
-<script src="lib/jquery/jquery.min.js"></script>
-<script src="lib/jquery/jquery-migrate.min.js"></script>
-<script src="lib/popper/popper.min.js"></script>
-<script src="lib/bootstrap/js/bootstrap.min.js"></script>
-<script src="lib/easing/easing.min.js"></script>
-<script src="lib/owlcarousel/owl.carousel.min.js"></script>
-<script src="lib/scrollreveal/scrollreveal.min.js"></script>
+<script src="{{asset('lib/jquery/jquery.min.js')}}"></script>
+<script src="{{asset('lib/jquery/jquery-migrate.min.js')}}"></script>
+<script src="{{asset('lib/popper/popper.min.js')}}"></script>
+<script src="{{asset('lib/bootstrap/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('lib/easing/easing.min.js')}}"></script>
+<script src="{{asset('lib/owlcarousel/owl.carousel.min.js')}}"></script>
+<script src="{{asset('lib/scrollreveal/scrollreveal.min.js')}}"></script>
 <!-- Contact Form JavaScript File -->
-<script src="contactform/contactform.js"></script>
+<script src="{{asset('contactform/contactform.js')}}"></script>
 
 <!-- Template Main Javascript File -->
-<script src="js/main.js"></script>
+<script src="{{asset('js/main.js')}}"></script>
 
 </body>
 </html>
