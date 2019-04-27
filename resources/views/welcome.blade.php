@@ -77,6 +77,11 @@
                         @endif
                     @endauth
                 </div>
+
+                <form id="logout-form" action="{{ url('/logout') }}" method="POST">
+                    {{ csrf_field() }}
+                    <input type="submit" value="logout" class="btn btn-danger">
+                </form>
             @endif
 
             <div class="content">

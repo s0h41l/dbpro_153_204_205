@@ -22,7 +22,7 @@ Route::get('/home', 'HomeController@index');
 
 Route::resource('batteries', 'BatteryController');
 
-Route::resource('posts', 'PostController');
+//Route::resource('posts', 'PostController');
 
 Route::resource('chipSets', 'ChipSetController');
 
@@ -123,3 +123,7 @@ Route::resource('fourGs', 'FourGController');
 Route::resource('displayExtraFeatures', 'DisplayExtraFeatureController');
 
 Route::resource('sDS', 'SDController');
+
+Route::get('client', function (){
+    return "buzzz off mada paka";
+});

@@ -20,13 +20,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-Route::resource('chip_sets', 'ChipSetAPIController');
+//Route::resource('chip_sets', 'ChipSetAPIController');
 
-Route::get('os',function(){
+Route::get('os/',function(){
    $os=\App\Models\OS::take(500)->get();
    return $os;
 });
-
 Route::get('ui',function(){
     $os=\App\Models\UI::take(500)->get();
     return $os;
@@ -48,6 +47,10 @@ Route::get('feature_message_field',function(){
     $os=\App\Models\FeatureMessage::take(500)->get();
     return $os;
 });
+
+
+
+
 
 
 Route::get('weights',function(){
@@ -75,6 +78,8 @@ Route::get('weight_field',function (){
     $weights=\App\Models\Weight::take(500)->get();
     return $weights;
 });
+
+
 
 Route::get('sim_field',function (){
     $sim=\App\Models\Sim::take(500)->get();
@@ -124,6 +129,10 @@ Route::get('resolution_field',function (){
 });
 
 
+
+
+
+
 Route::get('screen_size_field',function (){
     $sim=\App\Models\ScreenSize::take(500)->get();
     return $sim;
@@ -152,6 +161,7 @@ Route::get('sd_card_field',function (){
 });
 
 
+
 Route::get('main_camera_field',function (){
     $sim=\App\Models\MainCamera::take(500)->get();
     return $sim;
@@ -159,12 +169,14 @@ Route::get('main_camera_field',function (){
 
 Route::get('camera_field',function (){
     $sim=\App\Models\SecondaryCamera::take(500)->get();
+
     return $sim;
 });
 
 
 Route::get('camera_feature_field',function (){
     $sim=\App\Models\CameraFeature::take(500)->get();
+
     return $sim;
 });
 
@@ -172,14 +184,18 @@ Route::get('camera_feature_field',function (){
 
 Route::get('wlan_field',function (){
     $sim=\App\Models\Wlan::take(500)->get();
+
     return $sim;
 });
 
 
 Route::get('gps_field',function (){
     $sim=\App\Models\GPS::take(500)->get();
+
     return $sim;
 });
+
+
 
 
 Route::get('nfc_field',function (){
@@ -189,6 +205,7 @@ Route::get('nfc_field',function (){
 
 Route::get('usb_field',function (){
     $sim=\App\Models\USB::take(500)->get();
+
     return $sim;
 });
 
@@ -196,26 +213,87 @@ Route::get('usb_field',function (){
 
 Route::get('ir_field',function (){
     $sim=\App\Models\Infrared::take(500)->get();
+
     return $sim;
 });
 
 
 Route::get('data_field',function (){
     $sim=\App\Models\Data::take(500)->get();
+
     return $sim;
 });
 
 
 Route::get('bluetooth_field',function (){
     $sim=\App\Models\Bluetooth::take(500)->get();
+
     return $sim;
 });
 
 
 Route::get('radio_field',function (){
     $sim=\App\Models\Radio::take(500)->get();
+
     return $sim;
 });
+
+Route::get('apicall',function (){
+    $os=\App\Models\OS::take(500)->select('id','details')->get();
+    $ui=\App\Models\UI::take(500)->select('id','details')->get();
+    $chipset=\App\Models\ChipSet::take(500)->select('id','details')->get();
+    $nfc=\App\Models\NFC::take(500)->select('id','details')->get();
+    $displayprotection=\App\Models\DisplayProtection::take(500)->select('id','details')->get();
+    $featuremessage=\App\Models\FeatureMessage::take(500)->select('id','details')->get();
+    $sim=\App\Models\Sim::take(500)->select('id','details')->get();
+    $secondarycamera=\App\Models\SecondaryCamera::take(500)->select('id','details')->get();
+    $dimension=\App\Models\Dimension::take(500)->select('id','details')->get();
+    $weights=\App\Models\Weight::take(500)->select('id','weight')->get();
+    $color=\App\Models\BodyColor::take(500)->select('id','color')->get();
+    $twog=\App\Models\TwoG::take(500)->select('id','details')->get();
+    $threeg=\App\Models\Threeg::take(500)->select('id','details')->get();
+    $fourg=\App\Models\FourG::take(500)->select('id','details')->get();
+    $cpu=\App\Models\CPU::take(500)->select('id','details')->get();
+    $display_technology=\App\Models\DisplayTechnologie::take(500)->select('id','details')->get();
+    $resolution=\App\Models\ScreenResolution::take(500)->select('id','height','width')->get();
+    $screensize=\App\Models\ScreenSize::take(500)->select('id','size')->get();
+    $extrafeature=\App\Models\ExtraFeature::take(500)->select('id','details')->get();
+    $builtinmemory=\App\Models\BuiltInMemory::take(500)->select('id','details')->get();
+    $displayextrafeature=\App\Models\DisplayExtraFeature::take(500)->select('id','details')->get();
+    $sdcard=\App\Models\SD::take(500)->select('id','details')->get();
+    $gps=\App\Models\GPS::take(500)->select('id','details')->get();
+    $wlan=\App\Models\Wlan::take(500)->select('id','details')->get();
+    $camerafeature=\App\Models\CameraFeature::take(500)->select('id','details')->get();
+    $maincamera=\App\Models\MainCamera::take(500)->select('id','details')->get();
+    $radio=\App\Models\Radio::take(500)->select('id','details')->get();
+    $bluetooth=\App\Models\Bluetooth::take(500)->select('id','details')->get();
+    $data=\App\Models\Data::take(500)->select('id','details')->get();
+    $infrared=\App\Models\Infrared::take(500)->select('id','details')->get();
+    $usb=\App\Models\USB::take(500)->select('id','details')->get();
+    $sim=\App\Models\Sim::take(500)->select('id','details')->get();
+    $frequency=\App\Models\Frequency::take(500)->select('id','details')->get();
+    $browser=\App\Models\Browser::take(500)->select('id','details')->get();
+    $featuresensor=\App\Models\FeatureSensor::take(500)->select('id','details')->get();
+    $battery=\App\Models\Batterie::take(500)->select('id','details')->get();
+    $torch=\App\Models\Torch::take(500)->select('id','details')->get();
+    $game=\App\Models\Game::take(500)->select('id','details')->get();
+    $brand=\App\Models\Brand::take(500)->select('id','name')->get();
+    return ['os'=>$os,'ui'=>$ui,'chipset'=>$chipset,'nfc'=>$nfc,'displayprotection'=>$displayprotection,'featuremessage'=>$featuremessage,'sim'=>$sim,'secondarycaera'=>$secondarycamera,
+        'dimensions'=>$dimension,'weight'=>$weights,'color'=>$color,
+    'twog'=>$twog,'threeg'=>$threeg,'fourg'=>$fourg,'cpu'=>$cpu,'display_technology'=>$display_technology,'resolution'=>$resolution,'scressnsize'=>$screensize,
+        'extrafeature'=>$extrafeature,'builtinmemory'=>$builtinmemory,'displayextrafeature'=>$displayextrafeature,
+       'sdcard'=>$sdcard,'gps'=>$gps,'wlan'=>$wlan,'camerafeature'=>$camerafeature,'maincamera'=>$maincamera,'radio'=>$radio,'bluetooth'=>$bluetooth,'data'=>$data,'infrared'=>$infrared,
+        'frequency'=>$frequency,'browser'=>$browser,'featuresensor'=>$featuresensor,
+       'battery'=>$battery,'torch'=>$torch,'game'=>$game,'usb'=>$usb,
+        'brand'=>$brand
+    ];
+
+
+});
+
+
+
+
 
 
 
@@ -227,35 +305,41 @@ Route::get('feature_game_field',function (){
 
 Route::get('torch_field',function (){
     $sim=\App\Models\Torch::take(500)->get();
+
     return $sim;
 });
 
 
 Route::get('extra_feature_field',function (){
     $sim=\App\Models\ExtraFeature::take(500)->get();
+
     return $sim;
 });
 
 
 Route::get('battery_field',function (){
     $sim=\App\Models\Batterie::take(500)->get();
+
     return $sim;
 });
 
 
 Route::get('sensor_field',function (){
     $sim=\App\Models\FeatureSensor::take(500)->get();
+
     return $sim;
 });
 
 
 Route::get('browser_field',function (){
     $sim=\App\Models\Browser::take(500)->get();
+
     return $sim;
 });
 
 Route::get('frequency_field',function (){
     $sim=\App\Models\Frequency::take(500)->get();
+
     return $sim;
 });
 

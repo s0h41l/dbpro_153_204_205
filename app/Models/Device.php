@@ -150,6 +150,7 @@ class Device extends Model
         'feature_browser_id',
         'frequency_id',
         'cover_image',
+        'brand_id',
         'image_1',
         'image_2',
         'image_3',
@@ -204,6 +205,7 @@ class Device extends Model
         'battery_id' => 'integer',
         'feature_sensor_id' => 'integer',
         'feature_browser_id' => 'integer',
+        'brand_id' => 'integer',
         'frequency_id' => 'integer',
         'cover_image' => 'string',
         'image_1' => 'string',
@@ -261,6 +263,7 @@ class Device extends Model
         'feature_browser_id' => 'required',
         'frequency_id' => 'required',
         'cover_image' => 'required',
+        'brand_id' => 'required',
         'image_1' => 'required',
         'image_2' => 'required',
         'image_3' => 'required',
@@ -563,5 +566,10 @@ class Device extends Model
     public function frequency()
     {
         return $this->belongsTo(\App\Models\Frequency::class, 'frequency_id');
+    }
+
+    public function brand()
+    {
+        return $this->belongsTo(\App\Models\Brand::class, 'frequency_id');
     }
 }
