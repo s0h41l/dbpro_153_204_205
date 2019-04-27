@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\App\Models\Device;
+use Illuminate\Support\Facades\DB;
 
 
 /*
@@ -341,6 +342,12 @@ Route::get('frequency_field',function (){
     $sim=\App\Models\Frequency::take(500)->get();
 
     return $sim;
+});
+
+Route::get('getPhone/{string}',function ($string){
+    $results = DB::select( DB::raw("SELECT cover_image,device.id,brand.name,device.description from device join brand on device.brand_id=brand.id where device.description  like '%$string%'"));
+    return $results;
+
 });
 
 

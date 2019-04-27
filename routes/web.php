@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
 
 Auth::routes();
@@ -126,4 +126,9 @@ Route::resource('sDS', 'SDController');
 
 Route::get('client', function (){
     return "buzzz off mada paka";
+});
+
+
+Route::get('/',function (){
+    return view('clientSide.index');
 });
