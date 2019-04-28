@@ -29,7 +29,7 @@ class ChipSetController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $chipSets = $this->chipSetRepository->paginate(30);
+        $chipSets = $this->chipSetRepository->paginate(10);
 
 
         return view('chip_sets.index')->with('chipSets', $chipSets);

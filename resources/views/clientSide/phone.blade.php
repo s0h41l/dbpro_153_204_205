@@ -100,12 +100,52 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{asset('/contact')}}">Contact</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{asset('/login')}}">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{asset('/register')}}">Register</a>
-                </li>
+                @if(!Auth::user())
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{asset('/login')}}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{asset('/register')}}">Register</a>
+                    </li>
+
+                @endif
+
+                @if(Auth::user())
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" style="margin-right: 10px" data-toggle="dropdown" href="#" role="button"
+                           aria-haspopup="true" aria-expanded="false">
+                            {!! Auth::user()->name !!}
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <div class="dropdown-header text-center">
+                                <strong>Account</strong>
+                            </div>
+                            <a class="dropdown-item" href="#">
+                                <i class="fa fa-envelope-o"></i> Messages
+                                <span class="badge badge-success">42</span>
+                            </a>
+                            <div class="dropdown-header text-center">
+                                <strong>Settings</strong>
+                            </div>
+                            <a class="dropdown-item" href="#">
+                                <i class="fa fa-user"></i> Profile</a>
+                            <a class="dropdown-item" href="#">
+                                <i class="fa fa-wrench"></i> Settings</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">
+                                <i class="fa fa-shield"></i> Lock Account</a>
+                            <a class="dropdown-item" href="{!! url('/logout') !!}" class="btn btn-default btn-flat"
+                               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                <i class="fa fa-lock"></i>Logout
+                            </a>
+                            <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
+                        </div>
+                    </li>
+                @endif
 
             </ul>
         </div>
