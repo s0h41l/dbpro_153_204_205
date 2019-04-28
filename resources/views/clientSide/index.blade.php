@@ -99,12 +99,52 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{asset('/contact')}}">Contact</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{asset('/login')}}">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{asset('/register')}}">Register</a>
-                </li>
+                @if(!Auth::user())
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{asset('/login')}}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{asset('/register')}}">Register</a>
+                    </li>
+
+                    @endif
+
+                @if(Auth::user())
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" style="margin-right: 10px" data-toggle="dropdown" href="#" role="button"
+                           aria-haspopup="true" aria-expanded="false">
+                            {!! Auth::user()->name !!}
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <div class="dropdown-header text-center">
+                                <strong>Account</strong>
+                            </div>
+                            <a class="dropdown-item" href="#">
+                                <i class="fa fa-envelope-o"></i> Messages
+                                <span class="badge badge-success">42</span>
+                            </a>
+                            <div class="dropdown-header text-center">
+                                <strong>Settings</strong>
+                            </div>
+                            <a class="dropdown-item" href="#">
+                                <i class="fa fa-user"></i> Profile</a>
+                            <a class="dropdown-item" href="#">
+                                <i class="fa fa-wrench"></i> Settings</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">
+                                <i class="fa fa-shield"></i> Lock Account</a>
+                            <a class="dropdown-item" href="{!! url('/logout') !!}" class="btn btn-default btn-flat"
+                               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                <i class="fa fa-lock"></i>Logout
+                            </a>
+                            <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
+                        </div>
+                    </li>
+                    @endif
 
             </ul>
         </div>
@@ -300,36 +340,36 @@
                         <div class="card-overlay-a-content">
                             <div class="card-header-a">
                                 <h2 class="card-title-a">
-                                    <a>206 Mount
-                                        <br /> Olive Road Two</a>
+                                    <a>Apple
+                                        <br /> Apple Products</a>
                                 </h2>
                             </div>
                             <div class="card-body-a">
                                 <div class="price-box d-flex">
-                                    <span class="price-a">rent | $ 12.000</span>
+                                    <span class="price-a">starting from | $ 3000.000</span>
                                 </div>
-                                <a href="#" class="link-a">Click here to view
+                                <a href="" class="link-a">Click here to view
                                     <span class="ion-ios-arrow-forward"></span>
                                 </a>
                             </div>
                             <div class="card-footer-a">
                                 <ul class="card-info d-flex justify-content-around">
                                     <li>
-                                        <h4 class="card-info-title">Area</h4>
+                                        <h4 class="card-info-title">CPU</h4>
                                         <span>340m
                         <sup>2</sup>
                       </span>
                                     </li>
                                     <li>
-                                        <h4 class="card-info-title">Beds</h4>
+                                        <h4 class="card-info-title">GPU</h4>
                                         <span>2</span>
                                     </li>
                                     <li>
-                                        <h4 class="card-info-title">Baths</h4>
+                                        <h4 class="card-info-title">CAM</h4>
                                         <span>4</span>
                                     </li>
                                     <li>
-                                        <h4 class="card-info-title">Garages</h4>
+                                        <h4 class="card-info-title">GPS</h4>
                                         <span>1</span>
                                     </li>
                                 </ul>
@@ -347,36 +387,36 @@
                         <div class="card-overlay-a-content">
                             <div class="card-header-a">
                                 <h2 class="card-title-a">
-                                    <a>157 West
-                                        <br /> Central Park</a>
+                                    <a>Apple
+                                        <br /> Apple Products</a>
                                 </h2>
                             </div>
                             <div class="card-body-a">
                                 <div class="price-box d-flex">
-                                    <span class="price-a">rent | $ 12.000</span>
+                                    <span class="price-a">starting from | $ 3000.000</span>
                                 </div>
-                                <a class="link-a">Click here to view
+                                <a href="" class="link-a">Click here to view
                                     <span class="ion-ios-arrow-forward"></span>
                                 </a>
                             </div>
                             <div class="card-footer-a">
                                 <ul class="card-info d-flex justify-content-around">
                                     <li>
-                                        <h4 class="card-info-title">Area</h4>
+                                        <h4 class="card-info-title">CPU</h4>
                                         <span>340m
                         <sup>2</sup>
                       </span>
                                     </li>
                                     <li>
-                                        <h4 class="card-info-title">Beds</h4>
+                                        <h4 class="card-info-title">GPU</h4>
                                         <span>2</span>
                                     </li>
                                     <li>
-                                        <h4 class="card-info-title">Baths</h4>
+                                        <h4 class="card-info-title">CAM</h4>
                                         <span>4</span>
                                     </li>
                                     <li>
-                                        <h4 class="card-info-title">Garages</h4>
+                                        <h4 class="card-info-title">GPS</h4>
                                         <span>1</span>
                                     </li>
                                 </ul>
@@ -394,36 +434,36 @@
                         <div class="card-overlay-a-content">
                             <div class="card-header-a">
                                 <h2 class="card-title-a">
-                                    <a href="property-single.html">245 Azabu
-                                        <br /> Nishi Park let</a>
+                                    <a>Apple
+                                        <br /> Apple Products</a>
                                 </h2>
                             </div>
                             <div class="card-body-a">
                                 <div class="price-box d-flex">
-                                    <span class="price-a">rent | $ 12.000</span>
+                                    <span class="price-a">starting from | $ 3000.000</span>
                                 </div>
-                                <a href="property-single.html" class="link-a">Click here to view
+                                <a href="" class="link-a">Click here to view
                                     <span class="ion-ios-arrow-forward"></span>
                                 </a>
                             </div>
                             <div class="card-footer-a">
                                 <ul class="card-info d-flex justify-content-around">
                                     <li>
-                                        <h4 class="card-info-title">Area</h4>
+                                        <h4 class="card-info-title">CPU</h4>
                                         <span>340m
                         <sup>2</sup>
                       </span>
                                     </li>
                                     <li>
-                                        <h4 class="card-info-title">Beds</h4>
+                                        <h4 class="card-info-title">GPU</h4>
                                         <span>2</span>
                                     </li>
                                     <li>
-                                        <h4 class="card-info-title">Baths</h4>
+                                        <h4 class="card-info-title">CAM</h4>
                                         <span>4</span>
                                     </li>
                                     <li>
-                                        <h4 class="card-info-title">Garages</h4>
+                                        <h4 class="card-info-title">GPS</h4>
                                         <span>1</span>
                                     </li>
                                 </ul>
@@ -441,36 +481,36 @@
                         <div class="card-overlay-a-content">
                             <div class="card-header-a">
                                 <h2 class="card-title-a">
-                                    <a>204 Montal
-                                        <br /> South Bela Two</a>
+                                    <a>Apple
+                                        <br /> Apple Products</a>
                                 </h2>
                             </div>
                             <div class="card-body-a">
                                 <div class="price-box d-flex">
-                                    <span class="price-a">rent | $ 12.000</span>
+                                    <span class="price-a">starting from | $ 3000.000</span>
                                 </div>
-                                <a href="property-single.html" class="link-a">Click here to view
+                                <a href="" class="link-a">Click here to view
                                     <span class="ion-ios-arrow-forward"></span>
                                 </a>
                             </div>
                             <div class="card-footer-a">
                                 <ul class="card-info d-flex justify-content-around">
                                     <li>
-                                        <h4 class="card-info-title">Area</h4>
+                                        <h4 class="card-info-title">CPU</h4>
                                         <span>340m
                         <sup>2</sup>
                       </span>
                                     </li>
                                     <li>
-                                        <h4 class="card-info-title">Beds</h4>
+                                        <h4 class="card-info-title">GPU</h4>
                                         <span>2</span>
                                     </li>
                                     <li>
-                                        <h4 class="card-info-title">Baths</h4>
+                                        <h4 class="card-info-title">CAM</h4>
                                         <span>4</span>
                                     </li>
                                     <li>
-                                        <h4 class="card-info-title">Garages</h4>
+                                        <h4 class="card-info-title">GPS</h4>
                                         <span>1</span>
                                     </li>
                                 </ul>
@@ -494,7 +534,7 @@
                         <h2 class="title-a">Team</h2>
                     </div>
                     <div class="title-link">
-                        <a href="agents-grid.html">
+                        <a href="">
                             <span class="ion-ios-arrow-forward"></span>
                         </a>
                     </div>
