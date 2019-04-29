@@ -29,7 +29,7 @@ class SimController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $sims = $this->simRepository->all();
+        $sims = $this->simRepository->paginate('10');
 
         return view('sims.index')
             ->with('sims', $sims);

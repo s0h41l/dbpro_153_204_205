@@ -18,5 +18,6 @@
             </td>
         </tr>
     @endforeach
+    {{$torches->links()}}
     </tbody>
 </table>

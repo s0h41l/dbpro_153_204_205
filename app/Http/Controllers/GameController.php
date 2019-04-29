@@ -29,7 +29,7 @@ class GameController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $games = $this->gameRepository->all();
+        $games = $this->gameRepository->paginate('10');
 
         return view('games.index')
             ->with('games', $games);

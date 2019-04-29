@@ -18,5 +18,6 @@
             </td>
         </tr>
     @endforeach
+    {{$radios->links()}}
     </tbody>
 </table>

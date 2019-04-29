@@ -29,7 +29,7 @@ class FeatureMessageController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $featureMessages = $this->featureMessageRepository->all();
+        $featureMessages = $this->featureMessageRepository->paginate('10');
 
         return view('feature_messages.index')
             ->with('featureMessages', $featureMessages);

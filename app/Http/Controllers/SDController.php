@@ -29,7 +29,7 @@ class SDController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $sDS = $this->sDRepository->all();
+        $sDS = $this->sDRepository->paginate('10');
 
         return view('s_d_s.index')
             ->with('sDS', $sDS);

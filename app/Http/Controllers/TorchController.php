@@ -29,7 +29,7 @@ class TorchController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $torches = $this->torchRepository->all();
+        $torches = $this->torchRepository->paginate('10');
 
         return view('torches.index')
             ->with('torches', $torches);

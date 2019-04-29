@@ -18,5 +18,6 @@
             </td>
         </tr>
     @endforeach
+    {{$sims->links()}}
     </tbody>
 </table>

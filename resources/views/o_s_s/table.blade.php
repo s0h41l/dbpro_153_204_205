@@ -18,5 +18,6 @@
             </td>
         </tr>
     @endforeach
+    {{$oSS->links()}}
     </tbody>
 </table>

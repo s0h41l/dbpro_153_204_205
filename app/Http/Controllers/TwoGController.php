@@ -29,7 +29,7 @@ class TwoGController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $twoGs = $this->twoGRepository->all();
+        $twoGs = $this->twoGRepository->paginate('10');
 
         return view('two_gs.index')
             ->with('twoGs', $twoGs);

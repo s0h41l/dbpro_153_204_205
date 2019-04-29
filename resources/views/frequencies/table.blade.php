@@ -18,5 +18,6 @@
             </td>
         </tr>
     @endforeach
+    {{$frequencies->links()}}
     </tbody>
 </table>

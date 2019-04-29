@@ -29,7 +29,7 @@ class ScreenSizeController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $screenSizes = $this->screenSizeRepository->all();
+        $screenSizes = $this->screenSizeRepository->paginate('10');
 
         return view('screen_sizes.index')
             ->with('screenSizes', $screenSizes);

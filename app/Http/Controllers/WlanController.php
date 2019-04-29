@@ -29,7 +29,7 @@ class WlanController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $wlans = $this->wlanRepository->all();
+        $wlans = $this->wlanRepository->paginate('10');
 
         return view('wlans.index')
             ->with('wlans', $wlans);

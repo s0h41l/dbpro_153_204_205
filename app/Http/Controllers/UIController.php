@@ -29,7 +29,7 @@ class UIController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $uIS = $this->uIRepository->all();
+        $uIS = $this->uIRepository->paginate('10');
 
         return view('u_i_s.index')
             ->with('uIS', $uIS);

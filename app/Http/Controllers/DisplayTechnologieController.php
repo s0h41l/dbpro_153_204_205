@@ -29,7 +29,7 @@ class DisplayTechnologieController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $displayTechnologies = $this->displayTechnologieRepository->all();
+        $displayTechnologies = $this->displayTechnologieRepository->paginate('10');
 
         return view('display_technologies.index')
             ->with('displayTechnologies', $displayTechnologies);

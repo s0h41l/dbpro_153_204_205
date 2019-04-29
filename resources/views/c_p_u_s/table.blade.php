@@ -18,5 +18,6 @@
             </td>
         </tr>
     @endforeach
+    {{$cPUS->links()}}
     </tbody>
 </table>

@@ -29,7 +29,7 @@ class NFCController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $nFCS = $this->nFCRepository->all();
+        $nFCS = $this->nFCRepository->paginate('10');
 
         return view('n_f_c_s.index')
             ->with('nFCS', $nFCS);

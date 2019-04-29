@@ -29,7 +29,7 @@ class BrandController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $brands = $this->brandRepository->all();
+        $brands = $this->brandRepository->paginate('10');
 
         return view('brands.index')
             ->with('brands', $brands);

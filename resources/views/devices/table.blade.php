@@ -26,5 +26,6 @@
             </td>
         </tr>
     @endforeach
+    {{$devices->links()}}
     </tbody>
 </table>

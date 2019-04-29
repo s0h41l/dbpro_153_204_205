@@ -18,5 +18,6 @@
             </td>
         </tr>
     @endforeach
+    {{$nFCS->links()}}
     </tbody>
 </table>

@@ -18,5 +18,6 @@
             </td>
         </tr>
     @endforeach
+    {{$featureSensors->links()}}
     </tbody>
 </table>

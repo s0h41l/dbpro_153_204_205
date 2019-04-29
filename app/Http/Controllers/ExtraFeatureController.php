@@ -29,7 +29,7 @@ class ExtraFeatureController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $extraFeatures = $this->extraFeatureRepository->all();
+        $extraFeatures = $this->extraFeatureRepository->paginate('10');
 
         return view('extra_features.index')
             ->with('extraFeatures', $extraFeatures);

@@ -29,7 +29,7 @@ class DataController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $data = $this->dataRepository->all();
+        $data = $this->dataRepository->paginate('10');
 
         return view('data.index')
             ->with('data', $data);

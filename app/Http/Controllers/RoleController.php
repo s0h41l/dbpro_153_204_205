@@ -29,7 +29,7 @@ class RoleController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $roles = $this->roleRepository->all();
+        $roles = $this->roleRepository->paginate('10');
 
         return view('roles.index')
             ->with('roles', $roles);

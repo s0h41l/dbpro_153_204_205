@@ -29,7 +29,7 @@ class CPUController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $cPUS = $this->cPURepository->all();
+        $cPUS = $this->cPURepository->paginate('10');
 
         return view('c_p_u_s.index')
             ->with('cPUS', $cPUS);

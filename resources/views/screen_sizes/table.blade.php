@@ -18,5 +18,6 @@
             </td>
         </tr>
     @endforeach
+    {{$screenSizes->links()}}
     </tbody>
 </table>

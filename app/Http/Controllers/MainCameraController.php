@@ -29,7 +29,7 @@ class MainCameraController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $mainCameras = $this->mainCameraRepository->all();
+        $mainCameras = $this->mainCameraRepository->paginate('10');
 
         return view('main_cameras.index')
             ->with('mainCameras', $mainCameras);

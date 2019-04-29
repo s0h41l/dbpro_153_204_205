@@ -29,7 +29,7 @@ class ThreegController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $threegs = $this->threegRepository->all();
+        $threegs = $this->threegRepository->paginate('10');
 
         return view('threegs.index')
             ->with('threegs', $threegs);

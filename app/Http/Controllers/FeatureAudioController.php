@@ -29,7 +29,7 @@ class FeatureAudioController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $featureAudios = $this->featureAudioRepository->all();
+        $featureAudios = $this->featureAudioRepository->paginate('10');
 
         return view('feature_audios.index')
             ->with('featureAudios', $featureAudios);

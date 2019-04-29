@@ -18,5 +18,7 @@
             </td>
         </tr>
     @endforeach
+
+    {{$bodyColors->links()}}
     </tbody>
 </table>

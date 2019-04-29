@@ -29,7 +29,7 @@ class CameraFeatureController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $cameraFeatures = $this->cameraFeatureRepository->all();
+        $cameraFeatures = $this->cameraFeatureRepository->paginate('10');
 
         return view('camera_features.index')
             ->with('cameraFeatures', $cameraFeatures);

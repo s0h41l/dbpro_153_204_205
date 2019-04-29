@@ -18,5 +18,6 @@
             </td>
         </tr>
     @endforeach
+    {{$gPSS->links()}}
     </tbody>
 </table>

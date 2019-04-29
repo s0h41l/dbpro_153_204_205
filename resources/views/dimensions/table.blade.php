@@ -18,5 +18,6 @@
             </td>
         </tr>
     @endforeach
+    {{$dimensions->links()}}
     </tbody>
 </table>

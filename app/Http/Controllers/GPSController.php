@@ -29,7 +29,7 @@ class GPSController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $gPSS = $this->gPSRepository->all();
+        $gPSS = $this->gPSRepository->paginate('10');
 
         return view('g_p_s_s.index')
             ->with('gPSS', $gPSS);

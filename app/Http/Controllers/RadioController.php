@@ -29,7 +29,7 @@ class RadioController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $radios = $this->radioRepository->all();
+        $radios = $this->radioRepository->paginate('10');
 
         return view('radios.index')
             ->with('radios', $radios);

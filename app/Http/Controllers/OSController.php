@@ -29,7 +29,7 @@ class OSController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $oSS = $this->oSRepository->all();
+        $oSS = $this->oSRepository->paginate('10');
 
         return view('o_s_s.index')
             ->with('oSS', $oSS);

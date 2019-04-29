@@ -18,5 +18,6 @@
             </td>
         </tr>
     @endforeach
+    {{nfrareds ->links()}}
     </tbody>
 </table>

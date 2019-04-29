@@ -30,7 +30,7 @@ class DeviceController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $devices = $this->deviceRepository->all();
+        $devices = $this->deviceRepository->paginate('10');
 
         return view('devices.index')->with('devices', $devices);
     }

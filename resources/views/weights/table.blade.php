@@ -18,5 +18,6 @@
             </td>
         </tr>
     @endforeach
+    {{$weights->links()}}
     </tbody>
 </table>

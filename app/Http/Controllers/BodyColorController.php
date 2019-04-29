@@ -29,7 +29,7 @@ class BodyColorController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $bodyColors = $this->bodyColorRepository->all();
+        $bodyColors = $this->bodyColorRepository->paginate('10');
 
         return view('body_colors.index')
             ->with('bodyColors', $bodyColors);

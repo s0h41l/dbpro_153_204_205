@@ -18,5 +18,6 @@
             </td>
         </tr>
     @endforeach
+    {{$fourGs->links()}}
     </tbody>
 </table>

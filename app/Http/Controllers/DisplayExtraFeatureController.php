@@ -29,7 +29,7 @@ class DisplayExtraFeatureController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $displayExtraFeatures = $this->displayExtraFeatureRepository->all();
+        $displayExtraFeatures = $this->displayExtraFeatureRepository->paginate('10');
 
         return view('display_extra_features.index')
             ->with('displayExtraFeatures', $displayExtraFeatures);

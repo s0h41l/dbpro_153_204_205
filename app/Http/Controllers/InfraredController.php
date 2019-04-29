@@ -29,7 +29,7 @@ class InfraredController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $infrareds = $this->infraredRepository->all();
+        $infrareds = $this->infraredRepository->paginate('10');
 
         return view('infrareds.index')
             ->with('infrareds', $infrareds);

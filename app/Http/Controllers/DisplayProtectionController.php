@@ -29,7 +29,7 @@ class DisplayProtectionController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $displayProtections = $this->displayProtectionRepository->all();
+        $displayProtections = $this->displayProtectionRepository->paginate('10');
 
         return view('display_protections.index')
             ->with('displayProtections', $displayProtections);

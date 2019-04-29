@@ -20,5 +20,6 @@
             </td>
         </tr>
     @endforeach
+    {{$uSBS->links()}}
     </tbody>
 </table>

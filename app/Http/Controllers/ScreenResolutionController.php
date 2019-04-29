@@ -29,7 +29,7 @@ class ScreenResolutionController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $screenResolutions = $this->screenResolutionRepository->all();
+        $screenResolutions = $this->screenResolutionRepository->paginate('10');
 
         return view('screen_resolutions.index')
             ->with('screenResolutions', $screenResolutions);

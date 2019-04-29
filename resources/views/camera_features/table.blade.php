@@ -18,5 +18,6 @@
             </td>
         </tr>
     @endforeach
+    {{$cameraFeatures->links()}}
     </tbody>
 </table>

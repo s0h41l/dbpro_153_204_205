@@ -29,7 +29,7 @@ class WeightController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $weights = $this->weightRepository->all();
+        $weights = $this->weightRepository->paginate('10');
 
         return view('weights.index')
             ->with('weights', $weights);

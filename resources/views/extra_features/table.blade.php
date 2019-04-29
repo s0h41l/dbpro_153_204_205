@@ -18,5 +18,6 @@
             </td>
         </tr>
     @endforeach
+    {{$extraFeatures->links()}}
     </tbody>
 </table>

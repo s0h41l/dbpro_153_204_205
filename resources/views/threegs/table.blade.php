@@ -18,5 +18,6 @@
             </td>
         </tr>
     @endforeach
+    {{$threegs->links()}}
     </tbody>
 </table>

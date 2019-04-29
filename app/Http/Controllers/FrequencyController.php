@@ -29,7 +29,7 @@ class FrequencyController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $frequencies = $this->frequencyRepository->all();
+        $frequencies = $this->frequencyRepository->paginate('10');
 
         return view('frequencies.index')
             ->with('frequencies', $frequencies);

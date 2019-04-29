@@ -29,7 +29,7 @@ class DimensionController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $dimensions = $this->dimensionRepository->all();
+        $dimensions = $this->dimensionRepository->paginate('10');
 
         return view('dimensions.index')
             ->with('dimensions', $dimensions);

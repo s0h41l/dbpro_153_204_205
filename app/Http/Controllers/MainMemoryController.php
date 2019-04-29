@@ -29,7 +29,7 @@ class MainMemoryController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $mainMemories = $this->mainMemoryRepository->all();
+        $mainMemories = $this->mainMemoryRepository->paginate('10');
 
         return view('main_memories.index')
             ->with('mainMemories', $mainMemories);

@@ -20,5 +20,6 @@
             </td>
         </tr>
     @endforeach
+    {{$mainCameras->links()}}
     </tbody>
 </table>

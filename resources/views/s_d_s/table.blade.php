@@ -18,5 +18,6 @@
             </td>
         </tr>
     @endforeach
+    {{$sDS->links()}}
     </tbody>
 </table>

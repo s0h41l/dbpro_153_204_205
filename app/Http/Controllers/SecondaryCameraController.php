@@ -29,7 +29,7 @@ class SecondaryCameraController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $secondaryCameras = $this->secondaryCameraRepository->all();
+        $secondaryCameras = $this->secondaryCameraRepository->paginate('10');
 
         return view('secondary_cameras.index')
             ->with('secondaryCameras', $secondaryCameras);

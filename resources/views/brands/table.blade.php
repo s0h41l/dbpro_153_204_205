@@ -18,5 +18,6 @@
             </td>
         </tr>
     @endforeach
+    {{$brands->links()}}
     </tbody>
 </table>

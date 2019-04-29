@@ -18,5 +18,6 @@
             </td>
         </tr>
     @endforeach
+    {{$featureAudios->links()}}
     </tbody>
 </table>

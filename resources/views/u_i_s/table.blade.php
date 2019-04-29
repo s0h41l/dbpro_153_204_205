@@ -18,5 +18,6 @@
             </td>
         </tr>
     @endforeach
+    {{$uIS->links()}}
     </tbody>
 </table>

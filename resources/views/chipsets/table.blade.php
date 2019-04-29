@@ -20,6 +20,6 @@
         </tr>
     @endforeach
 
-
+    {{$chipsets->links()}}
     </tbody>
 </table>

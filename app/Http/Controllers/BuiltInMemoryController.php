@@ -29,7 +29,7 @@ class BuiltInMemoryController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $builtInMemories = $this->builtInMemoryRepository->all();
+        $builtInMemories = $this->builtInMemoryRepository->paginate('10');
 
         return view('built_in_memories.index')
             ->with('builtInMemories', $builtInMemories);

@@ -18,5 +18,6 @@
             </td>
         </tr>
     @endforeach
+    {{$builtInMemories->links()}}
     </tbody>
 </table>

@@ -20,5 +20,6 @@
             </td>
         </tr>
     @endforeach
+    {{$screenResolutions->links()}}
     </tbody>
 </table>

@@ -18,5 +18,6 @@
             </td>
         </tr>
     @endforeach
+    {{$displayTechnologies->links()}}
     </tbody>
 </table>

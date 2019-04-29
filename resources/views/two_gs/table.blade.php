@@ -18,5 +18,6 @@
             </td>
         </tr>
     @endforeach
+    {{$twoGs->links()}}
     </tbody>
 </table>

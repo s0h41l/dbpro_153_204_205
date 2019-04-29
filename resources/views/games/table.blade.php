@@ -18,5 +18,6 @@
             </td>
         </tr>
     @endforeach
+    {{$games->links()}}
     </tbody>
 </table>

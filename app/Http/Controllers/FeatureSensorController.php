@@ -29,7 +29,7 @@ class FeatureSensorController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $featureSensors = $this->featureSensorRepository->all();
+        $featureSensors = $this->featureSensorRepository->paginate('10');
 
         return view('feature_sensors.index')
             ->with('featureSensors', $featureSensors);

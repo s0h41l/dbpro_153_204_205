@@ -29,7 +29,7 @@ class BrowserController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $browsers = $this->browserRepository->all();
+        $browsers = $this->browserRepository->paginate('10');
 
         return view('browsers.index')
             ->with('browsers', $browsers);

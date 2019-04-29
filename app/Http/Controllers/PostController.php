@@ -29,7 +29,7 @@ class PostController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $posts = $this->postRepository->all();
+        $posts = $this->postRepository->paginate('10');
 
         return view('posts.index')
             ->with('posts', $posts);

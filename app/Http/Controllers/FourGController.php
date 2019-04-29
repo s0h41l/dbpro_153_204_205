@@ -29,7 +29,7 @@ class FourGController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $fourGs = $this->fourGRepository->all();
+        $fourGs = $this->fourGRepository->paginate('10');
 
         return view('four_gs.index')
             ->with('fourGs', $fourGs);

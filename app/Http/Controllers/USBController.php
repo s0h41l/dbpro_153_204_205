@@ -29,7 +29,7 @@ class USBController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $uSBS = $this->uSBRepository->all();
+        $uSBS = $this->uSBRepository->paginate('10');
 
         return view('u_s_b_s.index')
             ->with('uSBS', $uSBS);

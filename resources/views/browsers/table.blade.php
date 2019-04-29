@@ -18,5 +18,6 @@
             </td>
         </tr>
     @endforeach
+    {{ $browsers->links() }}
     </tbody>
 </table>

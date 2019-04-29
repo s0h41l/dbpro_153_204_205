@@ -18,5 +18,6 @@
             </td>
         </tr>
     @endforeach
+    {{$displayProtections->links()}}
     </tbody>
 </table>
