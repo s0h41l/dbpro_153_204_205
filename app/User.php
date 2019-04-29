@@ -28,6 +28,11 @@ class User extends Authenticatable
         return false;
     }
 
+    public function dangling(){
+
+        $valu=121;
+    }
+
     /**
      * The attributes that should be hidden for arrays.
      *
