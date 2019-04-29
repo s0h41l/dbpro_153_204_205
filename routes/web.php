@@ -158,3 +158,8 @@ join sim on sim.id=device.sim_id join threeg on threeg.id=device.threeg_id join 
 
     return view('clientSide.phone')->with('device',$results);
 });
+
+
+Route::get('/contact',function (){
+    return view('clientSide.contact');
+});
