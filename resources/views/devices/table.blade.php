@@ -14,7 +14,7 @@
             <td>{!! $device->release_date !!}</td>
             <td>{!! $device->price !!}</td>
             <td>{!! $device->os_id !!}</td>
-            <td>{!! $device->cover_image !!}</td>
+            <td><img src="{{url('/images')}}/{!! $device->cover_image !!}" width="100" alt=""></td>
             <td>
                 {!! Form::open(['route' => ['devices.destroy', $device->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>
