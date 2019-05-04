@@ -1,7 +1,7 @@
 <table class="table table-responsive-sm table-striped" id="displayTechnologies-table">
     <thead>
         <th>Details</th>
-        <th colspan="3">Action</th>
+        <th>Action</th>
     </thead>
     <tbody>
     @foreach($displayTechnologies as $displayTechnologie)

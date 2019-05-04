@@ -2,7 +2,7 @@
     <thead>
         <th>Details</th>
         <th>Capacity</th>
-        <th colspan="3">Action</th>
+        <th>Action</th>
     </thead>
     <tbody>
     @foreach($batteries as $batterie)

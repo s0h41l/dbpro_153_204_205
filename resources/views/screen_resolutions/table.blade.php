@@ -2,7 +2,7 @@
     <thead>
         <th>Height</th>
         <th>Width</th>
-        <th colspan="3">Action</th>
+        <th>Action</th>
     </thead>
     <tbody>
     @foreach($screenResolutions as $screenResolution)

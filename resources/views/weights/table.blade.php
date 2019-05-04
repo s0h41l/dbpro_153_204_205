@@ -1,7 +1,7 @@
 <table class="table table-responsive-sm table-striped" id="weights-table">
     <thead>
         <th>Weight</th>
-        <th colspan="3">Action</th>
+        <th>Action</th>
     </thead>
     <tbody>
     @foreach($weights as $weight)

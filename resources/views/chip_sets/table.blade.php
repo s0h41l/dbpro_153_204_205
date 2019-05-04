@@ -2,7 +2,7 @@
     <thead>
         <th>Id</th>
         <th>Details</th>
-        <th colspan="3">Action</th>
+        <th>Action</th>
     </thead>
     <tbody>
     @foreach($chipSets as $chipSet)

@@ -1,7 +1,7 @@
 <table class="table table-responsive-sm table-striped" id="screenSizes-table">
     <thead>
         <th>Size</th>
-        <th colspan="3">Action</th>
+        <th>Action</th>
     </thead>
     <tbody>
     @foreach($screenSizes as $screenSize)

@@ -1,7 +1,7 @@
 <table class="table table-responsive-sm table-striped" id="extraFeatures-table">
     <thead>
         <th>Details</th>
-        <th colspan="3">Action</th>
+        <th>Action</th>
     </thead>
     <tbody>
     @foreach($extraFeatures as $extraFeature)

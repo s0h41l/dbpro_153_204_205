@@ -1,7 +1,7 @@
 <table class="table table-responsive-sm table-striped" id="sims-table">
     <thead>
         <th>Details</th>
-        <th colspan="3">Action</th>
+        <th>Action</th>
     </thead>
     <tbody>
     @foreach($sims as $sim)

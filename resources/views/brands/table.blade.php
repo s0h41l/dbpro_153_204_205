@@ -1,7 +1,7 @@
 <table class="table table-responsive-sm table-striped" id="brands-table">
     <thead>
         <th>Name</th>
-        <th colspan="3">Action</th>
+        <th>Action</th>
     </thead>
     <tbody>
     @foreach($brands as $brand)

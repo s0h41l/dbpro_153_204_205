@@ -1,7 +1,7 @@
 <table class="table table-responsive-sm table-striped" id="bodyColors-table">
     <thead>
         <th>Color</th>
-        <th colspan="3">Action</th>
+        <th>Action</th>
     </thead>
     <tbody>
     @foreach($bodyColors as $bodyColor)

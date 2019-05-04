@@ -1,7 +1,7 @@
 <table class="table table-responsive-sm table-striped" id="featureAudios-table">
     <thead>
         <th>Details</th>
-        <th colspan="3">Action</th>
+        <th>Action</th>
     </thead>
     <tbody>
     @foreach($featureAudios as $featureAudio)

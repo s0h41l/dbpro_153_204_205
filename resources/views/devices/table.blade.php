@@ -5,7 +5,7 @@
         <th>Price</th>
         <th>Os Id</th>
         <th>Cover Image</th>
-        <th colspan="3">Action</th>
+        <th>Action</th>
     </thead>
     <tbody>
     @foreach($devices as $device)
