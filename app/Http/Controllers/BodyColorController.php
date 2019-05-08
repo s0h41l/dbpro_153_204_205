@@ -54,6 +54,9 @@ class BodyColorController extends AppBaseController
      */
     public function store(CreateBodyColorRequest $request)
     {
+        $input = $request->validate([
+            'color'=> 'required|unique:color|max:255',
+        ]);
         $input = $request->all();
 
         $bodyColor = $this->bodyColorRepository->create($input);

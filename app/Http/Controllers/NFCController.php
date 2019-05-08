@@ -54,6 +54,9 @@ class NFCController extends AppBaseController
      */
     public function store(CreateNFCRequest $request)
     {
+        $input = $request->validate([
+            'details'=> 'required|unique:connectivity_nfc|max:255',
+        ]);
         $input = $request->all();
 
         $nFC = $this->nFCRepository->create($input);

@@ -54,6 +54,9 @@ class ChipSetController extends AppBaseController
      */
     public function store(CreateChipSetRequest $request)
     {
+        $input = $request->validate([
+            'details'=> 'required|unique:chip_set|max:255',
+        ]);
         $input = $request->all();
         $chipSet = $this->chipSetRepository->create($input);
 

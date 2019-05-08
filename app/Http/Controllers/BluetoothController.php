@@ -54,6 +54,9 @@ class BluetoothController extends AppBaseController
      */
     public function store(CreateBluetoothRequest $request)
     {
+        $input = $request->validate([
+            'details'=> 'required|unique:connectivity_bluetooth|max:255',
+        ]);
         $input = $request->all();
 
         $bluetooth = $this->bluetoothRepository->create($input);

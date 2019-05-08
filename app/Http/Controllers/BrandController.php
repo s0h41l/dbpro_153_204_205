@@ -54,6 +54,9 @@ class BrandController extends AppBaseController
      */
     public function store(CreateBrandRequest $request)
     {
+        $input = $request->validate([
+            'name'=> 'required|unique:brand|max:255',
+        ]);
         $input = $request->all();
 
         $brand = $this->brandRepository->create($input);

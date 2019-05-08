@@ -54,6 +54,10 @@ class BatterieController extends AppBaseController
      */
     public function store(CreateBatterieRequest $request)
     {
+        $input = $request->validate([
+            'details'=> 'required|unique:battery|max:255',
+        ]);
+
         $input = $request->all();
 
         $batterie = $this->batterieRepository->create($input);

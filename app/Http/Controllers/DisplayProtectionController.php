@@ -54,6 +54,9 @@ class DisplayProtectionController extends AppBaseController
      */
     public function store(CreateDisplayProtectionRequest $request)
     {
+        $input = $request->validate([
+            'details'=> 'required|unique:display_protection|max:255',
+        ]);
         $input = $request->all();
 
         $displayProtection = $this->displayProtectionRepository->create($input);
